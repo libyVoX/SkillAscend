@@ -18,6 +18,7 @@
 <body>
 	<div style="margin-top: 100px;" class="d-flex justify-content-center">
 		<form action="task-add.php" method="post" enctype="multipart/form-data">
+			<input name="title" placeholder="Название задачи">
 			<div class="d-flex">
 				<p>Тип задачи</p>
 				<select name="type" class="ms-3">
@@ -41,6 +42,7 @@
 				   	<option value="HTML">HTML</option>
 				</select>
 			</div>
+			<input name="file" type="file">
 			<button class="btn btn-primary">Добавить задачу</button>
 			<p>
 				<?

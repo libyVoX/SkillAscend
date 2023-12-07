@@ -1,0 +1,17 @@
+@font-face {
+font-family: 'MyFont';
+	src: url('fonts/Helvetica-Medium.ttf') format('truetype');
+}
+body{
+		font-family: MyFont;
+}
+input::placeholder{
+  color: white;
+}
+html {
+    width:100vw;
+    overflow-x:hidden;
+}
+.asdasd::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}

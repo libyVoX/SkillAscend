@@ -10,9 +10,14 @@
 		header('Location: signup.php');
 	}else{
 		$user_info = mysqli_query($con, "SELECT * FROM users WHERE username = '$username'");
+		$user_email = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
 
 		if(mysqli_num_rows($user_info) > 0){
 			$_SESSION['error'] = 'Такой пользователь уже существует';
+			header('Location: signup.php');
+		}
+		else if(mysqli_num_rows($user_email) > 0){
+			$_SESSION['error'] = 'Такая почта уже используется';
 			header('Location: signup.php');
 		}else{
 			$username = $_POST['username'];

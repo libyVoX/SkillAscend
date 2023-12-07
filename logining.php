@@ -3,9 +3,13 @@
 	$con = mysqli_connect('localhost', 'root', '', 'SkillAscend');
 
 	$username = $_POST['username'];
+	$email = $_POST['email'];
 	$password = $_POST['password'];
-
-	$user_info = mysqli_query($con, "SELECT * FROM users WHERE username = '$username'");
+	if($username){
+		$user_info = mysqli_query($con, "SELECT * FROM users WHERE username = '$username'");
+	}else{
+		$user_info = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
+	}
 	if(mysqli_num_rows($user_info) > 0){
 		$user_data = mysqli_fetch_assoc($user_info);
 		if($_POST['password'] === $user_data['password']){
